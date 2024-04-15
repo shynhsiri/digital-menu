@@ -1,4 +1,5 @@
 {% extends "./base.html" %}
+{% load static %}
 {% block title %}Menu{% endblock %}
 {% block content %}
 
@@ -12,56 +13,38 @@
     </div>
   </section>
 
-  <!-- menu 1 -->
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="pb-3 h5">Menu</div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-        {% for product in products %}
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <p class="card-text">
-                <a class="text-dark text-decoration-none" href="#"
-                  >{{ product.title }}</a
-                >
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted">{{ product.price }}</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
 
   <!-- menu -->
+  <div class="album py-5 bg-light">
   <div class="container mt-3">
     <h1>Coffee Shop Menu</h1>
     <hr>
     {% for c in categories %}
       <h2>{{ c.name|title }}</h2>
-      <div class="row">
-        {% for product in c.product.all %}
-        <div class="col-md-3 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">{{ product.title }}</h5>
-              <p class="card-text">{{ product.price }}</p>
+      {% for product in c.product.all %}
+      <div class="row g-0">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="col-md-4">
+              {% if product.image %}
+              <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}">
+              {% endif %}
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ product.title }}</h5>
+                <p class="card-text">{{ product.price }}</p>
+              </div>
             </div>
           </div>
-        </div>
         {% endfor %}
       </div>
       <hr>
     {% endfor %}
   </div>
+</div>
+
+<!-- menu test -->
+
 
 
 </main>

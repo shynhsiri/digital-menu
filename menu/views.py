@@ -13,9 +13,9 @@ def all_products(request):
     products = Product.objects.all()
     return render(request, 'menu/home.html', {'products': products})
 
-def product_detail(request, slug):
-    product = get_object_or_404(Product, slug=slug)
-    return render(request, 'menu/products/detail.html', {'product': product} )
+#def product_detail(request, slug):
+    #product = get_object_or_404(Product, slug=slug)
+    #return render(request, 'menu/products/detail.html', {'product': product} )
 
 
 #def category_list(request, category_slug=None):
