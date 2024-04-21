@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>{% block title %}Bar station{% endblock %}</title>
+</head>
+
+<body>
+
+    <!-- Items -->
+    <section id="items">
+        <div class="header">
+            <h1>{{ category.name|title }}</h1>
+        </div>
+        {% for product in products %}
+        <div class="item-cards">
+            <div class="card">
+                {% if product.image %}
+                <img src="{{ product.image.url }}">
+                {% endif %}
+                <div class="info">
+                    <h1>{{ product.title }}</h1>
+                    <p>{{ product.price }}T</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+    
+</body>
+
+</html>

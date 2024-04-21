@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif, Arial;
+}
+
+body{
+    font-size: 14px;
+}
+
+header{
+    background-color: #222227;
+    background-image: url("../image/header.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+header .card{
+    width: 345px;
+    height: 550px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    transition: all 0.3s ease;
+    padding: 24px;
+}
+
+header .info-text{
+    width: 313px;
+    height: 352px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+header .info-text img{
+    width: 136px;
+    height: 136px;
+}
+
+header .info-text h1{
+    font-size: 32px;
+    font-weight: 700;
+    font-family: Roboto;
+}
+
+header .info-text h3{
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+header .info-text a{
+    text-decoration: none;
+    color: #fff;
+}
+
+header .info-text i{
+    font-size: 40px;
+    font-weight: 40px;
+}
+
+header .info-text .scroll button{
+    width: 313px;
+    height: 39px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    gap: 10px;
+    background-color: white;
+    bottom: 20%;
+    left: 50%;
+    color: black;
+    transform: translate(0, -50%);
+    transition: all 0.5s;
+}
+
+header .info-text .scroll button:hover{
+    opacity: 0.7;
+}
+
+/*menu*/
+
+#category, #items{
+    background-color: #222227;
+    padding: 40px;
+}
+
+
+#category .header, #items .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#category .header h1, #items .header h1{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* category */
+#category .category-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+#category .card{
+    width: 112px;
+    height: 146px;
+    padding: 15px;
+    background-color:rgba(255, 255, 255, 0.25);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 15px;
+    display: flex;
+    gap: 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+
+#category .card:hover, #items .card:hover{
+    border-color: #fff;
+    box-shadow: none;
+}
+
+#category .card .info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#category .card img{
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 15%;
+}
+
+#category .card a{
+    text-decoration: none;
+}
+
+#category .card .info h1{
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto';
+    text-decoration: none;
+}
+
+/*item*/
+
+#items .item-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 100px;
+}
+
+#items .card{
+    padding: 30px;
+    background-color:rgba(255, 255, 255, 0.25);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    display: flex;
+    gap: 30px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#items .item-cards .card{
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;*/
+    min-width: 350px;
+}
+
+#items .item-cards .card img{
+    justify-content: start;
+    width: 80px;
+    height:  80px;
+    border-radius: 15%;
+}
+
+#items .card .info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding-top: 5px;
+}
+#items .card .info h1{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    font-family: 'Roboto';
+}
+
+#items .card .info p{
+    text-align: center;
+    color: #ccc;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    font-family: 'Roboto';
+}
+
+
+
+/*scrol button*/
+.scroll-top{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #222227;
+    color: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 16px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.scroll-top:hover{
+    border-color: #fff;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 720px) {
+    header .card{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .info-text img{
+        max-width: 136px;
+        max-height: 136px;
+    }
+
+    header .info-text h1{
+        font-size: 32px;
+    }
+
+    header .info-text h3{
+        font-size: 14px;
+    }
+/*
+    #category .card{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #category .card img{
+        max-width: 150px;
+        max-height: 150px;
+    }
+*/
+}
+

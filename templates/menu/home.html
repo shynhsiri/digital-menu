@@ -1,56 +1,51 @@
-{% extends "./base.html" %}
 {% load static %}
-{% block title %}Menu{% endblock %}
-{% block content %}
 
-<main>
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <img src="{% static 'image/weather-rain.png' %}" class="image" style="width:100px; margin-bottom:10px; ">
-        <h1 class="h1 fw-bold">Bar Station</h1>
-      </div>
-    </div>
-  </section>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>{% block title %}Bar station{% endblock %}</title>
+</head>
 
-  <!-- menu -->
-  <div class="album py-5 bg-light">
-  <div class="container mt-3">
-    <div class="d-flex justify-content-center">
-      <h1>Coffee Shop Menu</h1>
-    </div>
-    <hr>
-    {% for c in categories %}
-    <div class="d-flex justify-content-center" style="margin-bottom: 15px; margin-top: 15px;">
-      <h2>{{ c.name|title }}</h2>
-    </div>
-      {% for product in c.product.all %}
-      <div class="row g-0 d-flex justify-content-center">
-          <div class="card mb-3" style="max-width: 50%;">
-            <div class="img-fluid">
-              {% if product.image %}
-              <img class="card-img-top" alt="image" style="width: 100%;" src="{{ product.image.url }}">
-              {% endif %}
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="card">
+            <div class="info-text">
+                <img src="{% static 'image/logo.png' %}">  
+                <h1>cafe shop</h1>
+                <h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد</h3>
+                <a href="#category" class="scroll"><button>دیدن منو</button></a>
+                <a class="social-icon" href="https://www.instagram.com/barstation.cafe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class='bx bxl-instagram'></i></a>
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title" style="text-align: right;">{{ product.title }}</h5>
-                <p class="card-text" style="text-align: left;">{{ product.price }}</p>
-              </div>
+        </div>
+    </header>
+    <!-- category -->
+    <section id="category">
+        <div class="header">
+            <h1>Category</h1>
+        </div>
+        <div class="category-cards">
+            {% for c in categories %}
+            <div class="card">
+                <div class="info">
+                    {% if c.image %}
+                    <img src="{{ c.image.url }}">
+                    {% endif %}
+                    <a href="{{ c.get_absolute_url }}">
+                        <h1>{{ c.name|title }}</h1>
+                    </a>
+                </div>
             </div>
-          </div>
-        {% endfor %}
-      </div>
-      <hr>
-    {% endfor %}
-  </div>
-</div>
+            {% endfor %}
+        </div>
+    </section>
+    
+</body>
 
-<!-- menu test -->
-
-
-
-</main>
-
-{% endblock %}
+</html>
